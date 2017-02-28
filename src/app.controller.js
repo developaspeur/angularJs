@@ -2,12 +2,14 @@
 	
 	const app = angular.module('rhapp');
 
-	app.controller('RhappController', function($scope, $filter, rhappService){
+	app.controller('RhappController', function(rhappService){
 		let vm = this;
-		// vm.firstname = "Toto";
-		vm.applications = rhappService.getApplications();
-
-		let filter = $filter("addCivility")(vm.civilite, 2000);
+		
+		rhappService.getApplications()
+			.then(function(response){
+				let tmp = JSON.parse(response);
+				vm.applications = tmp.aplicationsList;
+			});
 	});
 
 })();

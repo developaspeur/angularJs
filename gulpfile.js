@@ -116,7 +116,7 @@ gulp.task('js',['generateconfigfile'], function() {
 
         .pipe(jshint.reporter(stylish))
 
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
 
         .pipe(concat('scripts/app.js'))
 
