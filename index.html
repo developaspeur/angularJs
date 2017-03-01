@@ -14,7 +14,7 @@
     <!-- endinject -->
 </head>
 
-<body ng-app="rhapp">
+<body ng-app="rhapp" ng-controller="RootController">
     <div class="container">
         <!-- Static navbar -->
         <nav class="navbar navbar-default">
@@ -30,15 +30,20 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/home">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/news">News</a></li>
+                        <li class="active"><a href="/home">{{'HOME' | translate}}</a></li>
+                        <li><a href="/about">{{'ABOUT' | translate}}</a></li>
+                        <li><a href="/news">{{'NEWS' | translate}}</a></li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
             </div>
             <!--/.container-fluid -->
         </nav>
+        <div class="btn-group pull-right" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" ng-repeat="locale in customLocales" ng-click="changeLocales(locale.id)">
+                {{locale.name}}
+            </button>
+        </div>
         <!-- Main component for a primary marketing message or call to action -->
         <div class="jumbotron">
             

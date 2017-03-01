@@ -3,11 +3,24 @@
         'ui.router',
         'rhapp.about',
         'rhapp.home',
-        'rhapp.news'        
+        'rhapp.news',
+        
+        'tmh.dynamicLocale',
+        'pascalprecht.translate'
         ]);
 
-    app.config(function($stateProvider, $locationProvider, $urlRouterProvider){
+    app.config(function($stateProvider, $locationProvider, $urlRouterProvider, $translateProvider, tmhDynamicLocaleProvider){
         $locationProvider.html5Mode(true);
+
+        // Localization
+        $translateProvider.preferredLanguage('ja-jp');
+        $translateProvider.useStaticFilesLoader({
+            prefix: 'data/languages/',
+            suffix: '.json'
+        });
+
+        tmhDynamicLocaleProvider.localeLocationPattern('data/i18n/angular-locale_{{locale}}.js');
+        tmhDynamicLocaleProvider.defaultLocale('fr-fr');
 
         $stateProvider
         .state('home', {
@@ -45,6 +58,28 @@
 
         $urlRouterProvider.otherwise('/home');
 
+    });
+
+    app.controller('RootController', function($scope, $locale, tmhDynamicLocale, $translate){
+        let locales = {
+            current: 'en-gb',
+            available: [{
+                id: 'en-gb',
+                name: 'English'
+            },{
+                id: 'fr-fr',
+                name: 'French'
+            },{
+                id: 'ja-jp',
+                name: 'Japanese'
+            }]
+        };
+
+        $scope.customLocales = locales.available;
+        $scope.changeLocales = (newLocale)=>{
+            tmhDynamicLocale.set(newLocale);
+            $translate.use(newLocale);
+        };
     });
 })();
 
