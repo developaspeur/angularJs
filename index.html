@@ -1,89 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>App angular</title>
-
-	<!-- inject:css -->
-	<link rel="stylesheet" type="text/css" href="/styles/bower.css">
-	<!-- endinject -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <base href="/">
+    <title>Jumbotron Template for Bootstrap</title>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/styles/bower.css">
+    <!-- endinject -->
 </head>
-<body ng-app="rhapp" ng-controller="RhappController as rhappCtrl">
 
-	<div class="container">
-
+<body ng-app="rhapp">
+    <div class="container">
         <!-- Static navbar -->
-
         <nav class="navbar navbar-default">
-
             <div class="container-fluid">
-
                 <div class="navbar-header">
-
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-
                         <span class="sr-only">Toggle navigation</span>
-
                         <span class="icon-bar"></span>
-
                         <span class="icon-bar"></span>
-
                         <span class="icon-bar"></span>
-
                     </button>
-
                     <a class="navbar-brand" href="#">Bank Back Office</a>
-
                 </div>
-
                 <div id="navbar" class="navbar-collapse collapse">
-
                     <ul class="nav navbar-nav">
-
                         <li class="active"><a href="/home">Home</a></li>
-
                         <li><a href="/about">About</a></li>
-
                         <li><a href="/news">News</a></li>
-
                     </ul>
-
                 </div>
-
                 <!--/.nav-collapse -->
-
             </div>
-
             <!--/.container-fluid -->
-
         </nav>
-
         <!-- Main component for a primary marketing message or call to action -->
-
         <div class="jumbotron">
-
-            <input type="text" ng-model="applicationQuery">
-
-            <div ng-repeat="anApplication in rhappCtrl.applications | filter:applicationQuery">
-            	
-            	<div>
-	            	{{anApplication.firstname}} 
-	            	{{anApplication.lastname}} 
-	            	{{anApplication.askedSalary | currency}} 
-            	</div>
-
-            </div>
+            
+            <div ng-view></div>
 
         </div>
-
     </div>
-
     <!-- /container -->
-
     <!-- inject:js -->
-    <script type="text/javascript" src="./scripts/bower.js"></script>
+    <script src="/scripts/bower.js"></script>
     <!-- endinject -->
-
     <script src="./scripts/app.min.js"></script>
 </body>
+
 </html>
