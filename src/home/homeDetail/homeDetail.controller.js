@@ -8,7 +8,9 @@
         if (!_.isEmpty(id)){
 	        homeService.getApplication(id).then(function(response){
 	            vm.anApplication = response.data.application;
-	        });
+	        }).catch(function(error){
+                alert("Erreur : HomeDetailController")
+            });
         }
     });
 })();

@@ -1,0 +1,62 @@
+<div ng-if="hnCtrl.errorWhileAdding" class="alert alert-danger" role="alert">
+    <span class="sr-only">Error:</span> 
+    Error while sending the application
+</div>
+<form class="form-signin" novalidate action="#" name="applicationForm" >
+
+    <h2 class="form-signin-heading">New application</h2>
+
+
+
+    <div class="form-group" ng-class="(applicationForm.firstname.$touched && applicationForm.firstname.$error.required) ? 'has-error' : 'has-success' ">
+
+        <label for="firstname" class="sr-only">Firstname</label>
+
+        <input type="text" id="firstname" name="firstname" ng-model="hnCtrl.application.firstname" class="form-control" placeholder="Firstname" required>
+
+        <div ng-show="applicationForm.firstname.$dirty && applicationForm.firstname.$error.required">
+
+            The firstname is required
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="form-group" ng-class="(applicationForm.lastname.$touched && applicationForm.lastname.$error.required) ? 'has-error' : 'has-success' ">
+
+        <label for="lastname" class="sr-only">Lastname</label>
+
+        <input type="text" id="lastname" name="lastname" ng-model="hnCtrl.application.lastname" class="form-control" placeholder="Lastname" required>
+
+        <div ng-show="applicationForm.lastname.$dirty && applicationForm.lastname.$error.required">
+
+            The lastname is required
+
+        </div>
+
+    </div>
+
+    <div class="form-group" ng-class="(applicationForm.askedSalary.$touched && applicationForm.askedSalary.$error.required) ? 'has-error' : 'has-success' ">
+
+        <label for="askedSalary" class="sr-only">Asked salary</label>
+
+        <input type="number" id="askedSalary" name="askedSalary" ng-model="hnCtrl.application.askedSalary" class="form-control" placeholder="Asked salary" required>
+
+        <div ng-show="applicationForm.askedSalary.$dirty && applicationForm.askedSalary.$error.required">
+
+            The salary is required
+
+        </div>
+
+    </div>
+
+
+    <input type="button" class="btn btn-lg btn-primary" ng-disabled="!applicationForm.$valid" ng-click="hnCtrl.save()"  value="Save">
+
+    <a class="pull-right" ui-sref="home">Cancel</a>
+
+</form>
