@@ -1,0 +1,24 @@
+<div>
+	<div>
+		Firstname : {{hdCtrl.anApplication.firstname}}
+	</div>
+	<div>
+		Lastname : {{hdCtrl.anApplication.lastname}}
+	</div>
+	<div>
+		Asked salary : {{hdCtrl.anApplication.askedSalary}}
+	</div>
+	<div>
+		<div ng-repeat="experience in hdCtrl.anApplication.experiences">
+			<div>
+				From : {{experience.from}}
+			</div>
+			<div>
+				To : {{experience.to}}
+			</div>
+			<div>
+				Description : {{experience.description}}
+			</div>
+		</div>
+	</div>
+</div>

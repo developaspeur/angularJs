@@ -42,10 +42,17 @@
         <!-- Main component for a primary marketing message or call to action -->
         <div class="jumbotron">
             
-            <div ng-view></div>
+            <div ui-view></div>
 
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            Please, check the <a ui-sref="about">about</a> page for more information
+        </div>
+    </footer>
+
     <!-- /container -->
     <!-- inject:js -->
     <script src="/scripts/bower.js"></script>

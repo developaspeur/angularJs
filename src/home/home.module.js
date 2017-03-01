@@ -1,5 +1,7 @@
 (function() {
-    const app = angular.module('rhapp.home', []);
+    const app = angular.module('rhapp.home', [
+    	'rhapp.home.homeDetail'
+    	]);
 })();
 
 
