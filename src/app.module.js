@@ -5,9 +5,11 @@
         'rhapp.home',
         'rhapp.news',
         'rhapp.home.edit',
+        'rhapp.shared',
 
         'tmh.dynamicLocale',
-        'pascalprecht.translate'
+        'pascalprecht.translate',
+
     ]);
 
     app.config(function($stateProvider, $locationProvider, $urlRouterProvider, $translateProvider,

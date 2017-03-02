@@ -2,9 +2,7 @@
 <a ui-sref="homeNew" class="btn btn-lg btn-primary">New application</a>
 <hr>
 
-<a ui-sref="homeDetail({id:anApplication.id})" class="list-group-item" ng-repeat="anApplication in hCtrl.applications">
-    <h4 class="list-group-item-heading">{{anApplication.firstname}} {{anApplication.lastname}}</h4>
-    <p class="list-group-item-text">{{anApplication.askedSalary | currency}}</p>
+<a ui-sref="homeDetail({id:anApplication.id})" application an-app="anApplication"  class="list-group-item" ng-repeat="anApplication in hCtrl.applications">
+	
 </a>
-
 

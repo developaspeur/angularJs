@@ -9,14 +9,14 @@
         vm.error = false;
 
         // Init du model
-        vm.anApplication = {};
+        vm.application = {};
 
         // Déclaration des méthodes à exposer
         vm.save = save;
 
         // Implémentation des méthodes exposées
         function save(){
-            homeService.addApplication(vm.anApplication).then(function(response){
+            homeService.addApplication(vm.application).then(function(response){
                 $state.go('home');
             })
             .catch(function(error){

@@ -24,7 +24,7 @@
     </div>
     <div class="form-group" ng-class="(applicationForm.askedSalary.$touched && applicationForm.askedSalary.$error.required) ? 'has-error' : 'has-success' ">
         <label for="askedSalary" class="sr-only">Asked salary</label>
-        <input type="number" id="askedSalary" name="askedSalary" ng-model="hnCtrl.application.askedSalary" class="form-control" placeholder="Asked salary" required>
+        <input type="text" id="askedSalary" name="askedSalary" ng-model="hnCtrl.application.askedSalary" class="form-control" placeholder="Asked salary" required amount>
         <div ng-show="applicationForm.askedSalary.$dirty && applicationForm.askedSalary.$error.required">
             The salary is required
         </div>

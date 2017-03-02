@@ -1,23 +1,6 @@
+<dialog-box ng-if="hdCtrl.showModal" on-close="hdCtrl.toggleModal()" on-save="hdCtrl.deleteApplication()" text="Supprimer la candidature"></dialog-box>
 <div ng-if="hdCtrl.error" class="alert alert-danger" role="alert">
     <span class="sr-only">Error:</span> Error while deleting the application
-</div>
-<div ng-if="hdCtrl.showModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" style="display: block">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                Confirmation
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-4">Êtes-vous sûr de vouloir supprimer ?</div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="hdCtrl.toggleModal()">Close</button>
-                <button type="button" class="btn btn-primary" ng-click="hdCtrl.deleteApplication()">Save changes</button>
-            </div>
-        </div>
-    </div>
 </div>
 <div>
     <div>
