@@ -1,26 +1,27 @@
-(function() {
+(function(){
     const app = angular.module('rhapp.home.new');
 
-    app.controller('HomeNewController', function(homeService, $state) {
+    app.controller('HomeNewController', function(homeService, $state){
         let vm = this;
+        vm.hello = 'hello!';
 
-        vm.application = {};
+        // Flag en cas d'erreur
+        vm.error = false;
+
+        // Init du model
+        vm.anApplication = {};
+
+        // Déclaration des méthodes à exposer
         vm.save = save;
-        vm.errorWhileAdding = false;
 
+        // Implémentation des méthodes exposées
         function save(){
-	        homeService.addApplication(vm.application)
-		        .then(function(response){
-		        	vm.errorWhileAdding = false;
-		        	$state.go("home");
-		        })
-		        .catch(function(error){
-		        	vm.errorWhileAdding = true;
-		        	window.alert("KO!");
-		        });
+            homeService.addApplication(vm.anApplication).then(function(response){
+                $state.go('home');
+            })
+            .catch(function(error){
+                vm.error = true;
+            });
         }
-
     });
 })();
-
-

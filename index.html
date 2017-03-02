@@ -39,25 +39,21 @@
             </div>
             <!--/.container-fluid -->
         </nav>
-        <div class="btn-group pull-right" role="group" aria-label="...">
+        <div class="btn-group pull-ight" role="group" aria-label="...">
             <button type="button" class="btn btn-default" ng-repeat="locale in customLocales" ng-click="changeLocales(locale.id)">
                 {{locale.name}}
             </button>
         </div>
         <!-- Main component for a primary marketing message or call to action -->
         <div class="jumbotron">
-            
             <div ui-view></div>
-
         </div>
     </div>
-
     <footer class="footer">
         <div class="container">
             Please, check the <a ui-sref="about">about</a> page for more information
         </div>
     </footer>
-
     <!-- /container -->
     <!-- inject:js -->
     <script src="/scripts/bower.js"></script>

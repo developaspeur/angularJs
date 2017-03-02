@@ -1,5 +1,6 @@
 {
-	"HOME"	: "Home",
-	"NEWS"	: "News",
-	"ABOUT"	: "About"
+    "HOME": "Home",
+    "NEWS": "News",
+    "ABOUT":"About",
+    "FIRSTNAME":"Firstname"
 }

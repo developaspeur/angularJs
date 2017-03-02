@@ -7,10 +7,10 @@
     "lodash": "latest",
     "angular-ui-router": "0.4.2",
 
-   	"angular-i18n": "latest",
-   	"angular-translate": "latest",
-   	"angular-translate-loader-static-files": "latest",
-   	"angular-dynamic-locale": "latest"
+    "angular-i18n": "1.6.2", 
+    "angular-dynamic-locale": "0.1.32", 
+    "angular-translate": "2.15.0", 
+    "angular-translate-loader-static-files": "2.15.0"
   }
 }
 

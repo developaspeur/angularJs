@@ -1,9 +1,11 @@
-(function(){
-	const app = angular.module('rhapp.about');
+(function() {
+    const app = angular.module('rhapp.about');
 
-	app.controller('AboutController', function(){
-		let vm = this;
-
-		vm.greetings = 'Welcome to about page !';
-	});
+    app.controller('AboutController', function($locale){
+        let vm = this;
+        vm.joursSemaine = $locale.DATETIME_FORMATS.DAY;
+        console.log($locale);
+    });
 })();
+
+

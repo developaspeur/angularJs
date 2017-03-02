@@ -1,5 +1,6 @@
 {
-	"HOME"	: "Accueil",
-	"NEWS"	: "Actualités",
-	"ABOUT"	: "A propos de"
+    "HOME": "Accueil",
+    "NEWS": "Actualités",
+    "ABOUT":"A propos de",
+    "FIRSTNAME":"Prénom"
 }
